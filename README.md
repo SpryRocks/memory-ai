@@ -5,7 +5,8 @@
 ### Core Features
 * **Permanent Storage:** Guided by the "Zero Deletion" principle — no information is ever removed from the knowledge base, creating a long-term digital memory.
 * **Smart Chats:** Isolated dialogues with full history support and dynamic message lazy-loading.
-* **Hashtag-Driven Context:** * Interconnects separate chats into a unified network via tags.
+* **Hashtag-Driven Context:**
+    * Interconnects separate chats into a unified network via tags.
     * Enables cross-chat message sharing based on matching hashtags.
 * **Hybrid Intelligence:**
     * **Generative:** Leveraging the Gemini API for high-quality response generation.
