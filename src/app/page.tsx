@@ -1,63 +1,84 @@
 import { FC } from 'react';
-import Image from 'next/image';
+import {Box, SxProps, Theme, Typography} from "@mui/material";
 
 const Home: FC = () => {
   return (
-    <main style={{
-      backgroundColor: '#0D1117',
-      color: '#E6EDF3',
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '20px',
-      textAlign: 'center',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
-    }}>
-      <div style={{ marginBottom: '32px', position: 'relative' }}>
-        <Image
-          src="/icon.png"
-          alt="Memory AI Logo"
-          width={120}
-          height={120}
-          priority
-        />
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: '#58A6FF',
-          filter: 'blur(50px)',
-          opacity: 0.15,
-          zIndex: -1
-        }} />
-      </div>
+    <Box sx={styles.layout}>
+      <Box sx={styles.container}>
+        <Typography variant="h3" component="h1" sx={styles.title}>
+          🧠 Memory AI
+        </Typography>
 
-      <h1 style={{
-        fontSize: '2.5rem',
-        fontWeight: 800,
-        marginBottom: '16px',
-        background: 'linear-gradient(90deg, #58A6FF, #79C0FF)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent'
-      }}>
-        Memory AI
-      </h1>
+        <Typography variant="h6" sx={styles.subtitle}>
+          Персональная база знаний с умным контекстом
+        </Typography>
 
-      <p style={{
-        maxWidth: '600px',
-        fontSize: '1.1rem',
-        lineHeight: '1.6',
-        color: '#8B949E'
-      }}>
-        Memory AI is an intelligent knowledge and chat management system that
-        combines the power of cloud-based AI with local vector search.
-      </p>
-    </main>
+        <Box sx={styles.specBox}>
+          <Typography variant="body2" sx={styles.specItem}>• Умные чаты со сквозными хэштегами</Typography>
+          <Typography variant="body2" sx={styles.specItem}>• Гибридный контекст: 5 последних + 20 релевантных сообщений</Typography>
+          <Typography variant="body2" sx={styles.specItem}>• Локальный векторный поиск на LanceDB</Typography>
+          <Typography variant="body2" sx={styles.specItem}>• Генерация ответов через Gemini API</Typography>
+        </Box>
+
+        <Typography variant="caption" sx={styles.footer}>
+          Next.js • React • LanceDB • Docker
+        </Typography>
+      </Box>
+    </Box>
   );
 }
+
+const styles: Record<string, SxProps<Theme>> = {
+  layout: {
+    display: 'flex',
+    height: '100vh',
+    width: '100vw',
+    backgroundColor: 'background.default',
+    color: 'text.primary',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 3,
+  },
+  container: {
+    textAlign: 'center',
+    maxWidth: '500px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  title: {
+    fontWeight: 700,
+    color: '#fff',
+    marginBottom: 1,
+  },
+  subtitle: {
+    color: 'primary.main',
+    fontWeight: 500,
+    marginBottom: 4,
+  },
+  specBox: {
+    backgroundColor: 'background.paper',
+    border: '1px solid',
+    borderColor: 'divider',
+    borderRadius: 2,
+    padding: 3,
+    width: '100%',
+    textAlign: 'left',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 1.5,
+    marginBottom: 4,
+  },
+  specItem: {
+    color: 'text.secondary',
+    lineHeight: 1.4,
+  },
+  footer: {
+    color: 'text.secondary',
+    letterSpacing: '0.1em',
+    textTransform: 'uppercase',
+    fontSize: '0.75rem',
+  },
+};
 
 export default Home;

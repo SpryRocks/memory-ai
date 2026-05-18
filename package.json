@@ -11,7 +11,13 @@
   "dependencies": {
     "next": "16.2.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "@mui/material": "^9.0.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.0.1",
+    "@mui/material-nextjs": "^9.0.1",
+    "@emotion/cache": "^11.14.0"
   },
   "devDependencies": {
     "@types/node": "^20",
