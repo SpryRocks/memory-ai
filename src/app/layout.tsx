@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import {FC, PropsWithChildren} from "react";
+import {CssBaseline, ThemeProvider } from "@mui/material";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
+import {theme} from "./theme";
+import {roboto} from "./fonts";
 
 export const metadata: Metadata = {
   title: "Memory AI",
@@ -10,17 +14,16 @@ interface IRootLayoutProps extends PropsWithChildren {}
 
 const RootLayout: FC<IRootLayoutProps> = ({children}) => {
   return (
-    <html lang="en" style={{
-      margin: 0,
-    }}>
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        />
-      </head>
+    <html lang="en" className={roboto.variable}>
+      <body>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
 
-      <body>{children}</body>
+            {children}
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
