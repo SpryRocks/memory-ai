@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import {FC, PropsWithChildren} from "react";
-import {CssBaseline, ThemeProvider } from "@mui/material";
+import {Box, CssBaseline, ThemeProvider} from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import {theme} from "./theme";
 import {roboto} from "./fonts";
+import {IStyleSheet} from "@/types";
 
 export const metadata: Metadata = {
   title: "Memory AI",
@@ -20,12 +21,23 @@ const RootLayout: FC<IRootLayoutProps> = ({children}) => {
           <ThemeProvider theme={theme}>
             <CssBaseline />
 
-            {children}
+            <Box sx={styles.layout}>
+              {children}
+            </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
   );
 }
+
+const styles = {
+  layout: {
+    height: '100dvh',
+    width: '100vw',
+    display: 'flex',
+    overflow: 'hidden',
+  }
+} satisfies IStyleSheet
 
 export default RootLayout;
