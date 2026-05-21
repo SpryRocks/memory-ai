@@ -18,7 +18,9 @@
     "@mui/icons-material": "^9.0.1",
     "@mui/material-nextjs": "^9.0.1",
     "@emotion/cache": "^11.14.0",
-    "@mui/x-chat": "^9.0.0-alpha.5"
+    "@mui/x-chat": "^9.0.0-alpha.5",
+    "nanoid": "^5.1.11",
+    "@google/genai": "^2.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",

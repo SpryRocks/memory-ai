@@ -4,7 +4,8 @@ import {messagesService} from "@/services";
 
 export const Main: FC = () => {
   const handleMessageReceived = async (message: string) => {
-    await messagesService.addMessage(message);
+    const response = await messagesService.addMessage({message})
+    return response.message;
   }
 
   return <Chat onMessageReceived={handleMessageReceived} />
