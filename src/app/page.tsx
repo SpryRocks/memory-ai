@@ -1,5 +1,5 @@
 "use client";
 
-import {Main} from '@/features';
+import {Main} from '@/ui';
 
 export default Main;
