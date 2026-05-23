@@ -613,55 +613,55 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lancedb/lancedb-darwin-arm64@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-darwin-arm64/-/lancedb-darwin-arm64-0.29.0.tgz#0abeffcd35cef1e9ea5b538655b7da8b308acd0d"
-  integrity sha512-LzI8+2WKRBGmLbOBe/ojya1ihIGWD7lz9cKGOnCKZ4Wvnqm4RRhyL0r4ukAgmhgJGrVIbZj+juwgSs+NDErLcw==
+"@lancedb/lancedb-darwin-arm64@0.30.0-beta.1":
+  version "0.30.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-darwin-arm64/-/lancedb-darwin-arm64-0.30.0-beta.1.tgz#29119ffc26eeca52fa23800ce1bdf9556894582a"
+  integrity sha512-mzLq4lS6n4GrAPsp23EmkMkiznt3AzTV4/u5xpAwtdO5o6i6E4mHJgAcuW+vp6+8z+UQFis4SGIJuN1UeQOdkQ==
 
-"@lancedb/lancedb-linux-arm64-gnu@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-linux-arm64-gnu/-/lancedb-linux-arm64-gnu-0.29.0.tgz#be10034b3042e5df19ff3243cf540ac6aba34977"
-  integrity sha512-y9hFXWVDJNxxpvR1XRrxSslFwIwBiXXDTwYQl/aKoIQ5irG1PdqKsnvCPGcIR01WhLlog12AGytby01lYuE7FA==
+"@lancedb/lancedb-linux-arm64-gnu@0.30.0-beta.1":
+  version "0.30.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-linux-arm64-gnu/-/lancedb-linux-arm64-gnu-0.30.0-beta.1.tgz#5689b76d4a4812a08d0d1a70a58969a146d23511"
+  integrity sha512-F/VVc1o7D7VwfofQ33LSaT3QDfl+aH94vYznX+3/lRG9bNwiPWV0vezkUgzCjZ6t/wh3j8yJ84EI6uQnDAkthA==
 
-"@lancedb/lancedb-linux-arm64-musl@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-linux-arm64-musl/-/lancedb-linux-arm64-musl-0.29.0.tgz#1da6e0b0b110ec5bf65d374abaaa4c0d996afe5f"
-  integrity sha512-fZ8Y4pzm/xfkSKhgZ289puaShckAOwd8s1mt5mHNDC8IuAaBmA6YxpDEQCItiDX1CNgsN+L7BFZWu11x+gsDPQ==
+"@lancedb/lancedb-linux-arm64-musl@0.30.0-beta.1":
+  version "0.30.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-linux-arm64-musl/-/lancedb-linux-arm64-musl-0.30.0-beta.1.tgz#a4e4c6e39648ef3f08cfc2eae3425adb6bae2272"
+  integrity sha512-Ny61cdoG122ZG7bX7ubquM8/wJVFAGVP5KR6b3V3r1xIt5bnVHd/fMkXDkIUZ7wFV72NUoMI7pX964lqaFE6eA==
 
-"@lancedb/lancedb-linux-x64-gnu@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-linux-x64-gnu/-/lancedb-linux-x64-gnu-0.29.0.tgz#188932c27eb796c8558c544470b78658c80584bc"
-  integrity sha512-1JLQohd/MKyAVVaO2unM66e80jm9F7CE1xCRlml+BNKUXReDI4m3Jg7DZLzor+jPs2+Si3dIwXa2Rzs/9plr5g==
+"@lancedb/lancedb-linux-x64-gnu@0.30.0-beta.1":
+  version "0.30.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-linux-x64-gnu/-/lancedb-linux-x64-gnu-0.30.0-beta.1.tgz#cad0466813b3eafc4c3d4401f0198620d7e02a82"
+  integrity sha512-/Td88PDbMzdIERuAM/dvgXoESVJF/9jQYLw8Oxu4WlXzKZ0xn1hCqwQXzGt16afKquDYaJauMRaMSKuKuol9ng==
 
-"@lancedb/lancedb-linux-x64-musl@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-linux-x64-musl/-/lancedb-linux-x64-musl-0.29.0.tgz#a1ccab92ffedbc36d7093c7e4797aba5b234a0b9"
-  integrity sha512-OZ3X0Cksi0e5e0ILvH/mGvuP3rQ2Rj/csNScExM3lroxlnl359TGQod+o4Z1hjSjLbPAe7gRax5Xwmu0/fh7AQ==
+"@lancedb/lancedb-linux-x64-musl@0.30.0-beta.1":
+  version "0.30.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-linux-x64-musl/-/lancedb-linux-x64-musl-0.30.0-beta.1.tgz#9f16d9271339454ceb1b554b4c3fbca60aad926a"
+  integrity sha512-26ncUcmL4kPiE8I2gIJq7vHJDYBr7f7p86gmrVO39IbyzFOkbKKep1AIix/1ObdCQVvmo+KYDCufgh9uaRr+vQ==
 
-"@lancedb/lancedb-win32-arm64-msvc@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-win32-arm64-msvc/-/lancedb-win32-arm64-msvc-0.29.0.tgz#f331910e8990ed7c0eb99108ee484696e0b2eeec"
-  integrity sha512-5BS/8sNmmqtuj4J5btaoG+mqhcrQZKMJQa4koc+VfzK6VW0KV465kkcXwPtyzgjF4SyionpO9SbUHZj6LHplYA==
+"@lancedb/lancedb-win32-arm64-msvc@0.30.0-beta.1":
+  version "0.30.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-win32-arm64-msvc/-/lancedb-win32-arm64-msvc-0.30.0-beta.1.tgz#93bfe610e9bcd14f687385f4040e763271ab654d"
+  integrity sha512-winN3CskKJ2gGEWVxdFcuucecR+qS8VWIY4PpcZiP7aRcSK1GscNIno4iLXO5IxbkQ0n9/O7MVJX/E20CXQMwA==
 
-"@lancedb/lancedb-win32-x64-msvc@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-win32-x64-msvc/-/lancedb-win32-x64-msvc-0.29.0.tgz#19f424f02a03320b5e7fc9cc24f2dd9ebc6fd124"
-  integrity sha512-cszoiRM0C1wYi7zbMTkQKhVLPWpsW4D3ZTVnukJrCW3faJ+GVyjkXCqpZebWgbq9/9XDNcS0/iJUbB/FbSUNSw==
+"@lancedb/lancedb-win32-x64-msvc@0.30.0-beta.1":
+  version "0.30.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@lancedb/lancedb-win32-x64-msvc/-/lancedb-win32-x64-msvc-0.30.0-beta.1.tgz#b50a35c154562a52a5d26889a57d7492ea72985c"
+  integrity sha512-EIsE0HfzecyX5m/77LBzEpmC94rY9D8k2o8QMsklCdH2PWhdfXG40bwxGdrPHyjq4Vp/Z5TKmgVSzvbz2kkj/w==
 
-"@lancedb/lancedb@^0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@lancedb/lancedb/-/lancedb-0.29.0.tgz#ed232623c2e6d7d0fa471f16e73d8b2c6ffda6e3"
-  integrity sha512-lqg2QVs+yriRZ30I1fqnR8qHTR8olSx+9gY7PKvbk19kjP9Ei3uvYhtNsoqdfaF8sdCXML9RczGP9HPYepF2yw==
+"@lancedb/lancedb@^0.30.0-beta.1":
+  version "0.30.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@lancedb/lancedb/-/lancedb-0.30.0-beta.1.tgz#50232618eb02490d819084e8518e5786a17f86c7"
+  integrity sha512-w/1XDgaMUgZorJXVSh3SsxAyHNwNjGr5UebBU5+h2f69qvtUt8nxnMsqnAKqXGgKHjMqwVnvo7OjI6FhqenOfA==
   dependencies:
     reflect-metadata "^0.2.2"
   optionalDependencies:
-    "@lancedb/lancedb-darwin-arm64" "0.29.0"
-    "@lancedb/lancedb-linux-arm64-gnu" "0.29.0"
-    "@lancedb/lancedb-linux-arm64-musl" "0.29.0"
-    "@lancedb/lancedb-linux-x64-gnu" "0.29.0"
-    "@lancedb/lancedb-linux-x64-musl" "0.29.0"
-    "@lancedb/lancedb-win32-arm64-msvc" "0.29.0"
-    "@lancedb/lancedb-win32-x64-msvc" "0.29.0"
+    "@lancedb/lancedb-darwin-arm64" "0.30.0-beta.1"
+    "@lancedb/lancedb-linux-arm64-gnu" "0.30.0-beta.1"
+    "@lancedb/lancedb-linux-arm64-musl" "0.30.0-beta.1"
+    "@lancedb/lancedb-linux-x64-gnu" "0.30.0-beta.1"
+    "@lancedb/lancedb-linux-x64-musl" "0.30.0-beta.1"
+    "@lancedb/lancedb-win32-arm64-msvc" "0.30.0-beta.1"
+    "@lancedb/lancedb-win32-x64-msvc" "0.30.0-beta.1"
 
 "@mui/core-downloads-tracker@^9.0.1":
   version "9.0.1"

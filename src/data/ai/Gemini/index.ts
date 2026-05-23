@@ -12,7 +12,7 @@ export class GeminiEngine implements IAIEngine {
   async generateMessage(options: IGenerateMessageOptions): Promise<IGenerateMessageResult> {
     const response = await this.ai.models.generateContent({
       model,
-      contents: options.message,
+      contents: options.question,
       config: {
         systemInstruction: options.systemInstruction,
         temperature,
@@ -23,6 +23,6 @@ export class GeminiEngine implements IAIEngine {
       throw new AiError("No response from the model");
     }
 
-    return {message: response.text};
+    return {answer: response.text};
   }
 }

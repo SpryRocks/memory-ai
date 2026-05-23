@@ -1,10 +1,10 @@
 export interface IGenerateMessageOptions {
-  message: string;
+  question: string;
   systemInstruction: string;
 }
 
 export interface IGenerateMessageResult {
-  message: string;
+  answer: string;
 }
 
 export interface IAIEngine {
