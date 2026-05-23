@@ -1,6 +1,6 @@
 "use server";
 
-import {GoogleGenAI} from "@google/genai";
+import {geminiEngine, messagesRepository} from "@/data";
 
 interface IAddMessageOptions {
   message: string;
@@ -10,25 +10,22 @@ interface IAddMessageResult {
   message: string;
 }
 
-const ai = new GoogleGenAI({});
-
-const model = "models/gemini-3.5-flash";
-const temperature = 0.7;
-const systemInstruction = "Ты — Memory AI, харизматичный цифровой компаньон и интеллектуальный собеседник. Общайся в живом, неформальном и дружеском тоне, развернуто поддерживай диалог, шути, сопоставляй факты из контекста и избегай шаблонных фраз вроде 'Чем я могу помочь?'.";
+const systemInstruction = `Ты — Memory AI, харизматичный цифровой компаньон и интеллектуальный собеседник.
+Общайся в живом, неформальном и дружеском тоне, развернуто поддерживай диалог, шути, сопоставляй факты из контекста
+и избегай шаблонных фраз вроде 'Чем я могу помочь?'.`;
 
 export async function addMessage(options: IAddMessageOptions): Promise<IAddMessageResult> {
-  const response = await ai.models.generateContent({
-    model,
-    contents: options.message,
-    config: {
-      systemInstruction,
-      temperature,
-    }
+  const answer = await geminiEngine.generateMessage({
+    message: options.message,
+    systemInstruction,
   });
 
-  if (!response.text) {
-    throw new Error("No response from the model");
-  }
+  await messagesRepository.addMessage({
+    question: options.message,
+    answer: answer.message,
+  });
 
-  return {message: response.text};
+  return {
+    message: answer.message,
+  };
 }

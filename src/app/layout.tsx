@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import {FC, PropsWithChildren} from "react";
 import {Box, CssBaseline, ThemeProvider} from "@mui/material";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
-import {theme} from "./theme";
-import {roboto} from "./fonts";
+import {AppRouterCacheProvider} from "@mui/material-nextjs/v16-appRouter";
 import {IStyleSheet} from "@/types";
+import {roboto, theme} from "@/resources";
 
 export const metadata: Metadata = {
   title: "Memory AI",
@@ -21,9 +20,7 @@ const RootLayout: FC<IRootLayoutProps> = ({children}) => {
           <ThemeProvider theme={theme}>
             <CssBaseline />
 
-            <Box sx={styles.layout}>
-              {children}
-            </Box>
+            <Box sx={styles.layout} children={children} />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
