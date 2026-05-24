@@ -1,27 +1,16 @@
+"use client";
+
 import {FC} from "react";
-import {ChatBox, ChatBoxProps, ChatConversationHeader} from "@mui/x-chat";
-import {nanoid} from "nanoid";
+import {ChatBox, ChatConversationHeader} from "@mui/x-chat";
 
-const createEmptyStream = () => new ReadableStream({
-  start(controller) {
-    controller.close();
-  },
-});
+import {messagesService} from "@/services";
+import {IConversationMessage, IStyleSheet} from "@/types";
 
-const createStaticMessageStream = (message: string) => new ReadableStream({
-  start(controller) {
-    const messageId = nanoid();
-
-    controller.enqueue({ type: 'start', messageId });
-    controller.enqueue({ type: 'text-delta', id: messageId, delta: message });
-    controller.enqueue({ type: 'finish', messageId: messageId });
-
-    controller.close();
-  },
-});
+import {createAdapter} from "./adapter";
+import {mapInitialMessagesToMui} from "./utils";
 
 interface IChatProps {
-  onMessageReceived: (message: string) => Promise<string>
+  initialMessages: IConversationMessage[];
 }
 
 const ConversationHeader: FC = (props) =>
@@ -29,30 +18,29 @@ const ConversationHeader: FC = (props) =>
     Memory AI
   </ChatConversationHeader>
 
-export const Chat: FC<IChatProps> = ({onMessageReceived}) => {
-  const adapter: ChatBoxProps["adapter"] = {
-    sendMessage: async (input) => {
-      if (input.message.parts[0].type === "text") {
-        const message = input.message.parts[0].text
-
-        const responseMessage = await onMessageReceived(message)
-
-        return createStaticMessageStream(responseMessage);
-      }
-
-      return createEmptyStream();
-    }
+export const Chat: FC<IChatProps> = ({initialMessages}) => {
+  const handleMessageReceived = (message: string) => {
+    return messagesService.addMessage({question: message});
   }
 
+  const adapter = createAdapter({
+    onMessageReceived: handleMessageReceived,
+  });
+
   return <ChatBox
+    sx={styles.container}
     adapter={adapter}
     slots={{
       conversationHeader: ConversationHeader,
     }}
-    sx={{
-      '& .MuiChatMessage-avatar': {
-        visibility: 'hidden',
-      },
-    }}
+    initialMessages={mapInitialMessagesToMui(initialMessages)}
   />;
 }
+
+const styles = {
+  container: {
+    '& .MuiChatMessage-avatar': {
+      visibility: 'hidden',
+    },
+  },
+} satisfies IStyleSheet;

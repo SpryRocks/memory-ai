@@ -21,7 +21,7 @@
     "@mui/x-chat": "^9.0.0-alpha.7",
     "nanoid": "^5.1.11",
     "@google/genai": "^2.5.0",
-    "@lancedb/lancedb": "^0.29.0",
+    "@lancedb/lancedb": "^0.30.0-beta.1",
     "apache-arrow": "^18.1.0"
   },
   "devDependencies": {

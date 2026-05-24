@@ -1,31 +1,31 @@
 "use server";
 
 import {geminiEngine, messagesRepository} from "@/data";
+import {IConversationMessage} from "@/types";
+import {nanoid} from "nanoid";
 
 interface IAddMessageOptions {
-  message: string;
-}
-
-interface IAddMessageResult {
-  message: string;
+  question: string;
 }
 
 const systemInstruction = `Ты — Memory AI, харизматичный цифровой компаньон и интеллектуальный собеседник.
 Общайся в живом, неформальном и дружеском тоне, развернуто поддерживай диалог, шути, сопоставляй факты из контекста
 и избегай шаблонных фраз вроде 'Чем я могу помочь?'.`;
 
-export async function addMessage(options: IAddMessageOptions): Promise<IAddMessageResult> {
-  const answer = await geminiEngine.generateMessage({
-    message: options.message,
+export async function addMessage({question}: IAddMessageOptions): Promise<IConversationMessage> {
+  const {answer} = await geminiEngine.generateMessage({
+    question,
     systemInstruction,
   });
 
-  await messagesRepository.addMessage({
-    question: options.message,
-    answer: answer.message,
-  });
+  const message: IConversationMessage = {
+    id: nanoid(),
+    question,
+    answer,
+    createdAt: new Date(),
+  }
 
-  return {
-    message: answer.message,
-  };
+  await messagesRepository.addMessage(message);
+
+  return message;
 }

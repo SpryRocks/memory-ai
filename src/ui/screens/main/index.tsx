@@ -1,12 +1,11 @@
 import {FC} from "react";
-import {Chat} from "./components";
+
 import {messagesService} from "@/services";
 
-export const Main: FC = () => {
-  const handleMessageReceived = async (message: string) => {
-    const response = await messagesService.addMessage({message})
-    return response.message;
-  }
+import {Chat} from "./components";
 
-  return <Chat onMessageReceived={handleMessageReceived} />
+export const Main: FC = async () => {
+  const initialMessages = await messagesService.getMessages();
+
+  return <Chat initialMessages={initialMessages} />
 }
