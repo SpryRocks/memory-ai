@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lancedb:migrate": "tsx src/data/database/lancedb/migration.ts",
+    "lancedb:migrate:up": "yarn lancedb:migrate up",
+    "lancedb:migrate:down": "yarn lancedb:migrate down"
   },
   "dependencies": {
     "next": "16.2.6",
@@ -22,7 +25,9 @@
     "nanoid": "^5.1.11",
     "@google/genai": "^2.5.0",
     "@lancedb/lancedb": "^0.30.0-beta.1",
-    "apache-arrow": "^18.1.0"
+    "apache-arrow": "^18.1.0",
+    "umzug": "^3.8.3",
+    "tsx": "^4.22.3"
   },
   "devDependencies": {
     "@types/node": "^20",
