@@ -1,4 +1,5 @@
 import { MigrationFn } from 'umzug';
+
 import {messagesRepository} from "../repository";
 
 export const up: MigrationFn = async () => {
