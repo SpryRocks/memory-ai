@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "lancedb:migrate": "tsx src/data/database/lancedb/migration.ts",
+    "lancedb:migrate": "tsx src/data/database/lancedb/migration-cli.ts",
     "lancedb:migrate:up": "yarn lancedb:migrate up",
     "lancedb:migrate:down": "yarn lancedb:migrate down"
   },

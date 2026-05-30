@@ -33,7 +33,7 @@ class Storage implements UmzugStorage {
   }
 }
 
-const umzug = new Umzug({
+export const migration = new Umzug({
   migrations: {
     glob: 'src/data/database/lancedb/migrations/*.ts',
   },
@@ -41,21 +41,13 @@ const umzug = new Umzug({
   logger: console,
 });
 
-async function main() {
-  const command = process.argv[2];
-
-  if (command === 'up') {
-    await umzug.up();
-    console.log('🎉 Все таблицы LanceDB успешно обновлены!');
-  } else if (command === 'down') {
-    await umzug.down();
-    console.log('↩️ Последний шаг успешно отменен!');
-  } else {
-    console.log('Использование: ts-node scripts/migrate-lance.ts [up|down]');
+export async function runLancedbMigrations() {
+  try {
+    console.log('--- Starting database migrations ---');
+    await migration.up();
+    console.log('--- Migrations executed successfully ---');
+  } catch (error) {
+    console.error('Migration failed during database initialization:', error);
+    process.exit(1);
   }
 }
-
-main().catch(err => {
-  console.error('❌ Ошибка миграции:', err);
-  process.exit(1);
-});

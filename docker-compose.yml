@@ -1,0 +1,10 @@
+services:
+  memory-ai:
+    container_name: memory-ai
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - ./.lancedb:/app/.lancedb
