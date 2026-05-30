@@ -7,6 +7,8 @@ import {getConnection} from "../../utils";
 
 type IGetMessagesResult = IConversationMessage[];
 
+const TABLE_NAME = "messages";
+
 enum Fields {
   Id = "id",
   Question = "question",
@@ -24,23 +26,34 @@ type IDbMessage = {
 class MessagesRepository {
   private table: Table | undefined;
 
+  public async createTable(): Promise<void> {
+    const db = await getConnection();
+
+    const schema = new Schema([
+      new Field(Fields.Id, new Utf8(), false),
+      new Field(Fields.Question, new Utf8(), false),
+      new Field(Fields.Answer, new Utf8(), false),
+      new Field(Fields.CreatedAt, new Utf8(), false),
+    ]);
+
+    this.table = await db.createTable({
+      name: TABLE_NAME,
+      schema,
+      data: [],
+    });
+  }
+
+  public async dropTable(): Promise<void> {
+    const db = await getConnection();
+
+    await db.dropTable(TABLE_NAME);
+  }
+
   private async getTable(): Promise<Table> {
     const db = await getConnection();
 
     if (!this.table) {
-      const schema = new Schema([
-        new Field(Fields.Id, new Utf8(), false),
-        new Field(Fields.Question, new Utf8(), false),
-        new Field(Fields.Answer, new Utf8(), false),
-        new Field(Fields.CreatedAt, new Utf8(), false),
-      ]);
-
-      this.table = await db.createTable({
-        name: "messages",
-        schema,
-        data: [],
-        existOk: true,
-      });
+      this.table = await db.openTable(TABLE_NAME);
     }
 
     return this.table;
